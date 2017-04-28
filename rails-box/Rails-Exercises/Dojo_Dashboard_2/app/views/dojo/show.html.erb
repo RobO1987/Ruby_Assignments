@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Show</title>
+  </head>
+  <body>
+    <h1><%= @dojo.branch %></h1>
+
+    <p>Address: <%= @dojo.street %></p>
+    <p>City: <%= @dojo.city %></p>
+    <p>State: <%= @dojo.state %></p>
+
+    <a href="/dojo/index">Home</a>
+    <a href="/dojo/<%= @dojo.id %>/edit">Edit</a>
+
+    <h2>Student Roster</h2>
+    <br>
+    <table>
+      <thead>
+        <tr>
+          <th>First Name</th>
+          <th>Last Name</th>
+          <th>Email</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td>
+            <a href="/student/show">Show</a>
+            <a href="/student/edit">Edit</a>
+            <a href="/student/destroy">Destroy</a>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <br>
+    <a href="/dojo/index">Home</a>
+    <a href="/student/new/<%= @dojo.id %>">Add Student</a>
+  </body>
+</html>

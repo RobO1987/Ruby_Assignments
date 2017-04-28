@@ -1,0 +1,47 @@
+<style>
+.user_info{
+  display: inline-block;
+  vertical-align: top;
+  margin-right: 30px;
+}
+
+.error_messages{
+  color: red;
+  display: list-item;
+  margin-top: 10px;
+}
+
+</style>
+
+<h1>Welcome to Dojo Secrets!</h1>
+
+<div class="user_info">
+<h3>Login</h3>
+<form class="" action="/users/login" method="post">
+<input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+<p>Email <input type="text" name="user[email]"></p>
+<p>Password <input type="password" name="user[password]"></p>
+<input type="submit" value="Log In">
+</form>
+</div>
+
+
+<div class="user_info">
+<h3>Register</h3>
+<form class="" action="/users/create" method="post">
+<input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+<p>Name <input type="text" name="user[name]" value=""></p>
+<p>Email <input type="text" name="user[email]" value=""></p>
+<p>Password <input type="password" name="user[password]" value=""></p>
+<p>Password Confirmation <input type="password" name="password_confirmation" value=""></p>
+<input type="submit" value="Join">
+</form>
+</div>
+
+<div class="error_messages">
+  <% if flash[:error] %>
+  <% flash[:error].each do |error| %>
+  <%= error %>
+  <% end %>
+  <% end %>
+</div>

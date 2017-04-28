@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Edit File</title>
+  </head>
+  <body>
+    <form action="/update/<%= @user.id %>" method="post">
+
+      <input name="authenticity_token" value="<%= form_authenticity_token %>" type="hidden">
+      <input type="text" name="name" value="<%= @user.name %>">
+      <input type="submit" name="submit" value="submit">
+
+    </form>
+  </body>
+</html>

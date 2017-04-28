@@ -1,0 +1,40 @@
+<h1>Listing <%= @dojos.count %> Dojos</h1>
+
+<% flash.each do |k,v| %>
+  <% if k == 'notice' %>
+  <p> <%= v %></p>
+  <% end %>
+<% end %>
+
+<table>
+  <thead>
+    <tr>
+      <th>Coding Dojo Branch</th>
+      <th>Street</th>
+      <th>City</th>
+      <th>State</th>
+      <th>Actions</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @dojos.each do |dojo| %>
+    <tr>
+      <td><%= dojo.branch %></td>
+      <td><%= dojo.street %></td>
+      <td><%= dojo.city %></td>
+      <td><%= dojo.state %></td>
+      <td>
+        <a href="/dojo/<%= dojo.id %>/show">Show</a>
+        <a href="/dojo/<%= dojo.id %>/edit">Edit</a>
+        <a href="/dojo/<%= dojo.id %>/destroy">Destroy</a>
+      </td>
+    </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+<hr>
+
+<a href="/dojo/new">New Dojo</a>

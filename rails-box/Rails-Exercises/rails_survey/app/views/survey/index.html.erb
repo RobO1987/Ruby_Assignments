@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Index Page</title>
+  </head>
+  <body>
+    <div class="mainBox" style="display:list-item">
+      <form action="/survey" method="post" style="display: list-item">
+
+        <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+
+        Your Name: <input type="text" name="testparamkey[name]" value="" style="display: list-item">
+
+        Dojo Location:<select class="" name="testparamkey[location]" style="display: list-item">
+        <option value='MountainView'>Mountain View</option>
+        <option value='MountainView'>Chicago</option>
+        <option value='MountainView'>Seattle</option>
+        </select>
+
+        Favorite Language:<select name="testparamkey[language]" style="display: list-item">
+          <option value='Ruby'>Ruby</option>
+          <option value='Python'>Python</option>
+          <option value='Django'>Django</option>
+        </select>
+
+        Comment(Optional)<input type="text" name="testparamkey[comment]" value="" style="display: list-item">
+
+        <!--SUBMIT BUTTON-->
+        <input type="submit" name="submit" value="submit" style="display: list-item">
+
+      </form>
+
+
+    </div>
+
+  </body>
+</html>

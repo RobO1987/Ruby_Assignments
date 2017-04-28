@@ -1,0 +1,36 @@
+<h1>RPG Index</h1>
+<h3>Your Gold: <%= @gold %> </h3>
+
+<br>
+<br>
+
+<form action="/farm" method="post">
+<input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+<p>Farm (earns 10-20 golds):</p>
+<input type="submit" name="farm" value="get yo money">
+</form>
+
+<form action="/cave" method="post">
+<input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+<p>Cave (earns 5-10 golds):</p>
+<input type="submit" name="" value="get yo money">
+</form>
+
+<form action="/house" method="post">
+<input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+<p>House (earns 2-5 golds):</p>
+<input type="submit" name="" value="get yo money">
+</form>
+
+<form action="/casino" method="post">
+<input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+<p>Casino (earns/takes 0-50 golds):</p>
+<input type="submit" name="" value="get yo money">
+</form>
+
+<br>
+<br>
+
+<% @activities.reverse.each do |element| %>
+  <p>Activities: <%= element %> </p>
+<% end %>
